@@ -44,17 +44,59 @@ Being capable at everything except writing code, chelsea found a good method to 
 The only thing Chelsea can do now is to find some help from her friends in FOCS (Fans of Computer Science). After some discussion, Salut, a talented freshman programmer in FOCS, proposed that Segment Tree can be introduced to solve this problem. She said, \medskip
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Segment Tree]
-	A Segment Tree\cite{segmenttree} is a data structure that allows answering range queries over an array effectively, while still being flexible enough to allow modifying the array. \medskip
+  A Segment Tree\cite{segmenttree} is a data structure that allows answering range queries over an array effectively, while still being flexible enough to allow modifying the array. \medskip
 
-	This includes finding the sum of consecutive array elements $a[l\dots r]$, or finding the minimum element in a such a range in $O(\log n)$ time. Between answering such queries the Segment Tree allows modifying the array by replacing one element, or even change the elements of a whole subsegment (e.g. assigning all elements $a[l\dots r]$ to any value, or adding a value to all element in the subsegment).
+  This includes finding the sum of consecutive array elements $a[l\dots r]$, or finding the minimum element in a such a range in $O(\log n)$ time. Between answering such queries the Segment Tree allows modifying the array by replacing one element, or even change the elements of a whole subsegment (e.g. assigning all elements $a[l\dots r]$ to any value, or adding a value to all element in the subsegment).
 \end{tcolorbox}
 
 Chelsea thought that this idea should work, but she was still wondering about how to write an algorithm based on Segment Tree, and how to fix all the bugs on time. At this moment, Jane, her another friend in FOCS asked, ``Why not holding a Debugging Competition in the Joint institute about the verification algorithm and  finding an expert in debugging through it to help you? You can attract them with bonus in the courses!'' Jane is correct and all of you are coming to the competition.
 
 \section{Problem}
 
+In the competition, each team should implement all of the functions in the header file \texttt{segment\_tree.h}, and also a main program to solve Chelsea's problem. You are provided with a sample C implentation of a segment tree, written by one of Chelsea's good friend, Nanthan, in FOCS.
 
+\subsection{Segment Tree (Data Structure)}
 
+Copy something from the website?
+
+\subsection{Main Program}
+
+The main program should help Chelsea solveing her debugging problem. The bug report of AIDT will have the following format:
+
+\begin{itemize}
+  \item First line: two positive integer $n$ and $m$, $n$ bug reports in Chelsea's code, and $m$ verifications Chelsea wants to try.
+  \item The next $n$ lines: a tuple <start end>, which means there the bug is in the interval [start, end].
+  \item The next $m$ lines: a tuple <start end>, which means your program should output the expectation and maximum number of bugs in the interval [start, end] on $m$ lines.
+  \item Line numbers start from 1. The maximum line number must be in the range of 32 bit unsigned int.
+\end{itemize}
+
+Sample Input:
+\begin{minted}{shell}
+3 3
+1 10
+6 15
+11 20
+1 20
+6 15
+1 10
+\end{minted}
+
+The expectation of bugs should have three digits after the decimal point.
+
+Sample Output:
+\begin{minted}{shell}
+3.000 3
+2.000 3
+1.500 2
+\end{minted}
+
+Hint:
+
+To calculate the expectation of bugs on a interval, update the expectation on each line, and accumulate them on the segment tree. To calculate the maximum of bugs on a interval, update the maximum on each line and take the range maximum on the segment tree.
+
+\subsection{Test Cases}
+
+Both of your data structure and main program will be tested by some seperated test cases. Make sure that your implementation of the segment tree provides the same output with the sample code.
 
 \section{Competition Rules}
 
@@ -84,11 +126,11 @@ In the correct version, any memory leak, invalid read/write in memory or undefin
 In the buggy version,
 
 \begin{itemize}
-	\item Each team should introduce a maximum of five bugs such that the program crashes.
-	\item Each bug should be rated with a number of
-	credits to be won when it is fixed. The total credits for all the bugs of a team should be 10.
-	\item Each bug should be roughly in 10 continuous lines (in the same function), and the characters need to be altered should not exceed a limit of about 20.
-	\item A list of bugs should also be submited to Chelsea.
+  \item Each team should introduce a maximum of five bugs such that the program crashes.
+  \item Each bug should be rated with a number of
+        credits to be won when it is fixed. The total credits for all the bugs of a team should be 10.
+  \item Each bug should be roughly in 10 continuous lines (in the same function), and the characters need to be altered should not exceed a limit of about 20.
+  \item A list of bugs should also be submited to Chelsea.
 \end{itemize}
 
 The buggy version should fail at least one test on JOJ. Wrong answer, runtime errors, memory leaks, invalid reads/writes in memory and undefined behaviors are all allowed.
@@ -98,9 +140,9 @@ The buggy version should fail at least one test on JOJ. Wrong answer, runtime er
 The following behaviors are allowed and recommended:
 
 \begin{itemize}
-	\item Obscure the code by adding useless computation.
-	\item Express simple things in a complex manner.
-	\item Use a different implementation of the Data Stricture and the Algorithm.
+  \item Obscure the code by adding useless computation.
+  \item Express simple things in a complex manner.
+  \item Use a different implementation of the Data Stricture and the Algorithm.
 \end{itemize}
 
 \subsubsection{Forbbiden behaviors}
@@ -108,25 +150,25 @@ The following behaviors are allowed and recommended:
 Any of the following behaviors can be reported by other teams and judged by Chelsea. If verified, the guilty team will be kicked out and the reporter will get a bonus.
 
 \begin{itemize}
-	\item Write code or add bugs on them not related to the problem.
-	\item The source code isn't easily readable (e.g. writing the whole program on a single line, use meaningless function and variable names, code mixture).
-	\item Use non-standard library, or the multi-threading libary (intentionally).
-	\item Write Asemmbling code.
-	\item Cheating by providing other teams with an incomplete code (e.g. removing a function)
-	\item The buggy version doen't meet all requirements. (eg. too many bugs, no bugs, can not be compiled, changing too many lines in a bug)
+  \item Write code or add bugs on them not related to the problem.
+  \item The source code isn't easily readable (e.g. writing the whole program on a single line, use meaningless function and variable names, code mixture).
+  \item Use non-standard library, or the multi-threading libary (intentionally).
+  \item Write Asemmbling code.
+  \item Cheating by providing other teams with an incomplete code (e.g. removing a function)
+  \item The buggy version doen't meet all requirements. (eg. too many bugs, no bugs, can not be compiled, changing too many lines in a bug)
 \end{itemize}
 
 \subsection{Scores}
 
 The final score is calculated as follows:
 \begin{itemize}
-	\item Initial score is 0 for all the team.
-	\item When a team solves a bug it gets its corresponding credits.
-	\item The team who created the bug loses a number of credits equal to the credits corresponding to the
-	fixed bug, times the number of teams who fixed it.
-	\item At the end all the scores are calculated and the teams are ordered in increasing order with respect
-	to their final score. In case of a tie, groups are ordered with respect to the number of bugs they
-	fixed and if this is still a tie the number of their bugs fixed by other teams is considered.
+  \item Initial score is 0 for all the team.
+  \item When a team solves a bug it gets its corresponding credits.
+  \item The team who created the bug loses a number of credits equal to the credits corresponding to the
+        fixed bug, times the number of teams who fixed it.
+  \item At the end all the scores are calculated and the teams are ordered in increasing order with respect
+        to their final score. In case of a tie, groups are ordered with respect to the number of bugs they
+        fixed and if this is still a tie the number of their bugs fixed by other teams is considered.
 \end{itemize}
 
 Example: team $A$ wrote 3 bugs, $a_1$ , $a_2$ and $a_3$ , worth 1, 3 and 6 credits respectively. Team $B$ wrote 5
@@ -135,9 +177,9 @@ team $A$ fixes $b_1$, $b_2$ and $b_5$ , team $B$ fixes $a_1$ and $a_3$, and team
 then:
 
 \begin{itemize}
-	\item Team $A$: $\frac{1}{2}+\frac{1}{2}+5-1-6-3=-4$
-	\item Team $B$: $1+6-\frac{1}{2}-\frac{1}{2}-5\times2=-4$
-	\item Team $C$: $5+6=11$
+  \item Team $A$: $\frac{1}{2}+\frac{1}{2}+5-1-6-3=-4$
+  \item Team $B$: $1+6-\frac{1}{2}-\frac{1}{2}-5\times2=-4$
+  \item Team $C$: $5+6=11$
 \end{itemize}
 
 Team $C$ wins and since team $A$ fixed one more bug than team $B$ the order is then: 1st team $C$ , 2nd team $A$, 3rd team $B$.
@@ -146,10 +188,12 @@ Team $C$ wins and since team $A$ fixed one more bug than team $B$ the order is t
 
 
 
+
+
 \begin{thebibliography}{9}
-\bibitem{segmenttree}
-Segment Tree: \url{https://cp-algorithms.com/data_structures/segment_tree.html
-}
+  \bibitem{segmenttree}
+  Segment Tree: \url{https://cp-algorithms.com/data_structures/segment_tree.html
+  }
 \end{thebibliography}
 
 
