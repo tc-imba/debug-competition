@@ -39,7 +39,7 @@ void update_segment_tree(segment_tree tree, segment_tree_value value, unsigned i
 void range_update_segment_tree(segment_tree tree, segment_tree_value value, unsigned int start, unsigned int end);
 
 // aggregate the segment tree in range [start, end]
-segment_tree_value aggregate_segment_tree(segment_tree tree, unsigned int start, unsigned int end);
+segment_tree_value aggregate_segment_tree(const_segment_tree tree, unsigned int start, unsigned int end);
 
 void free_segment_tree(segment_tree tree);
 
