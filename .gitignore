@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+
+cmake-build-*
+!test-cases/*.out
+
 ### C template
 # Prerequisites
 *.d
