@@ -1,0 +1,113 @@
+languages:
+  - language: c
+    compiler_file: /bin/bash
+    compiler_args: bash /in/sample/make.c.sh
+  - language: cc
+    compiler_file: /bin/bash
+    compiler_args: bash /in/sample/make.cpp.sh
+compile_time_files: sample/
+default: &default
+  time: 2s
+  memory: 1024m
+  score: 5
+cases:
+  - <<: *default
+    input: test-cases/data.0.in
+    output: test-cases/data.0.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.1.in
+    output: test-cases/data.1.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.2.in
+    output: test-cases/data.2.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.3.in
+    output: test-cases/data.3.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.4.in
+    output: test-cases/data.4.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.5.in
+    output: test-cases/data.5.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.6.in
+    output: test-cases/data.6.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.7.in
+    output: test-cases/data.7.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/data.8.in
+    output: test-cases/data.8.out
+    execute_file: debug_test
+    execute_args: debug_test
+  - <<: *default
+    input: test-cases/bug.0.in
+    output: test-cases/bug.0.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.10.in
+    output: test-cases/bug.10.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.1.in
+    output: test-cases/bug.1.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.2.in
+    output: test-cases/bug.2.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.3.in
+    output: test-cases/bug.3.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.4.in
+    output: test-cases/bug.4.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.5.in
+    output: test-cases/bug.5.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.6.in
+    output: test-cases/bug.6.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.7.in
+    output: test-cases/bug.7.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.8.in
+    output: test-cases/bug.8.out
+    execute_file: debug
+    execute_args: debug
+  - <<: *default
+    input: test-cases/bug.9.in
+    output: test-cases/bug.9.out
+    execute_file: debug
+    execute_args: debug

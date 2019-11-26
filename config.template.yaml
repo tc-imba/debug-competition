@@ -1,0 +1,13 @@
+languages:
+  - language: c
+    compiler_file: /bin/bash
+    compiler_args: bash /in/sample/make.c.sh
+  - language: cc
+    compiler_file: /bin/bash
+    compiler_args: bash /in/sample/make.cpp.sh
+compile_time_files: sample/
+default: &default
+  time: 2s
+  memory: 1024m
+  score: 5
+cases:
