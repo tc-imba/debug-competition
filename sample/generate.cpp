@@ -102,13 +102,13 @@ int main(int argc, char *argv[]) {
     random_engine.seed(seed);
     generate_data(dir / "data.0.in", "int", "sum", "sum", 10000, 5000);
     generate_data(dir / "data.1.in", "double", "sum", "max", 10000, 5000);
-    generate_data(dir / "data.2.in", "str", "sum", "min", 1000, 1000);
+    generate_data(dir / "data.2.in", "str", "sum", "min", 100, 1000);
     generate_data(dir / "data.3.in", "int", "max", "max", 10000, 5000);
     generate_data(dir / "data.4.in", "double", "max", "min", 10000, 5000);
-    generate_data(dir / "data.5.in", "str", "max", "sum", 1000, 1000);
+    generate_data(dir / "data.5.in", "str", "max", "sum", 100, 1000);
     generate_data(dir / "data.6.in", "int", "min", "min", 10000, 5000);
     generate_data(dir / "data.7.in", "double", "min", "sum", 10000, 5000);
-    generate_data(dir / "data.8.in", "str", "min", "max", 1000, 1000);
+    generate_data(dir / "data.8.in", "str", "min", "max", 100, 1000);
 
     generate_bugs(dir / "bug.0.in", 10, 10, 100);
     generate_bugs(dir / "bug.1.in", 10, 50, 100);

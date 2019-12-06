@@ -1,9 +1,15 @@
 //
 // Created by liu on 2019/11/20.
 //
+#ifdef DEBUG_C
 extern "C" {
+#endif
+
 #include "segment_tree.h"
+
+#ifdef DEBUG_C
 }
+#endif
 
 #include <iostream>
 #include <string>
@@ -148,6 +154,9 @@ int main() {
             } else {
                 cin >> start >> end;
                 range_update_segment_tree(tree, value, start, end);
+            }
+            if (value_type == SEGMENT_TREE_STR) {
+                free(value.str_value);
             }
         } else if (op == "get" || op == "aggregate") {
             segment_tree_value value;

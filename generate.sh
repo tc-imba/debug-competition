@@ -2,8 +2,8 @@
 
 BUILD_DIR=cmake-build-release
 GENERATE_EXEC=$BUILD_DIR/debug_generate
-DATA_EXEC=$BUILD_DIR/debug_test
-BUG_EXEC=$BUILD_DIR/debug_cpp
+DATA_EXEC=$BUILD_DIR/debug_test_c
+BUG_EXEC=$BUILD_DIR/debug_c
 
 rm -rf test-cases
 cp config.template.yaml config.yaml
